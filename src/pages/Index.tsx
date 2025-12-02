@@ -1,13 +1,32 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { HeroSection } from "@/components/HeroSection";
+import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { CropsSection } from "@/components/CropsSection";
+import { PerformanceSection } from "@/components/PerformanceSection";
+import { TeamSection } from "@/components/TeamSection";
+import { Helmet } from "react-helmet-async";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <>
+      <Helmet>
+        <title>AgroDetect - AI-Powered Plant Disease Detection</title>
+        <meta name="description" content="A hybrid deep learning framework for real-time plant disease detection using YOLOv11, ResNet-50, EfficientNetB0, and Random Forest with 99.04% accuracy." />
+      </Helmet>
+      
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <main>
+          <HeroSection />
+          <HowItWorksSection />
+          <CropsSection />
+          <PerformanceSection />
+          <TeamSection />
+        </main>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
