@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Upload, Play, Leaf, Cpu, Target, Zap } from "lucide-react";
+import { Upload, Sprout, Leaf, Shield, Target, Zap } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const stats = [
-  { value: "99.04%", label: "Accuracy", icon: Target },
+  { value: "99%+", label: "Accuracy", icon: Target },
   { value: "7", label: "Crop Types", icon: Leaf },
-  { value: "30+", label: "Disease Classes", icon: Cpu },
-  { value: "Real-time", label: "Detection", icon: Zap },
+  { value: "30+", label: "Diseases Detected", icon: Shield },
+  { value: "Instant", label: "Results", icon: Zap },
 ];
 
 export function HeroSection() {
@@ -31,21 +31,21 @@ export function HeroSection() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/80 backdrop-blur-sm border border-primary/20 mb-8 animate-fade-up">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             <span className="text-sm font-medium text-foreground">
-              IEEE Published Research • MS Ramaiah IT
+              Protect Your Crops with AI
             </span>
           </div>
 
           {/* Title */}
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            AI-Powered{" "}
-            <span className="text-gradient">Plant Disease</span>{" "}
-            Detection
+            Detect Plant{" "}
+            <span className="text-gradient">Diseases</span>{" "}
+            Instantly
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            A hybrid deep learning framework combining YOLOv11, dual CNN feature extraction, 
-            and ensemble classification for real-time, field-deployable crop disease diagnosis.
+            Upload a photo of your plant leaf and get instant disease diagnosis 
+            with treatment recommendations. Keep your crops healthy and thriving.
           </p>
 
           {/* CTA Buttons */}
@@ -56,10 +56,10 @@ export function HeroSection() {
                 Upload & Detect
               </Button>
             </Link>
-            <Link to="/how-it-works">
+            <Link to="/faq">
               <Button variant="nature" size="xl" className="gap-3">
-                <Play className="w-5 h-5" />
-                See How It Works
+                <Sprout className="w-5 h-5" />
+                Learn More
               </Button>
             </Link>
           </div>
