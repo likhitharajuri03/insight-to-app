@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Leaf, Github, Mail, ExternalLink } from "lucide-react";
+import { Leaf, Mail, Phone } from "lucide-react";
 
 export function Footer() {
   return (
@@ -17,23 +17,21 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground max-w-md mb-4">
-              A hybrid deep learning framework for real-time plant disease detection. 
-              Combining YOLOv11, ResNet-50, EfficientNetB0, and Random Forest for 99.04% accuracy.
+              AI-powered plant disease detection to help farmers protect their crops 
+              and maximize yields. Upload, detect, and get treatment recommendations instantly.
             </p>
             <div className="flex gap-4">
               <a
-                href="mailto:thota.deepika.05@gmail.com"
+                href="mailto:support@agrodetect.com"
                 className="p-2 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
                 <Mail className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="tel:+919876543210"
                 className="p-2 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
-                <Github className="w-5 h-5" />
+                <Phone className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -53,32 +51,37 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/how-it-works" className="text-muted-foreground hover:text-primary transition-colors">
-                  How It Works
+                <Link to="/faq" className="text-muted-foreground hover:text-primary transition-colors">
+                  FAQ
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">
-                  About
+                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+                  Contact Us
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Research */}
+          {/* Support */}
           <div>
-            <h4 className="font-display font-semibold mb-4">Research</h4>
+            <h4 className="font-display font-semibold mb-4">Support</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
-                  IEEE Paper <ExternalLink className="w-3 h-3" />
-                </a>
+                <Link to="/login" className="text-muted-foreground hover:text-primary transition-colors">
+                  Login / Sign Up
+                </Link>
               </li>
               <li>
-                <span className="text-muted-foreground">MS Ramaiah IT</span>
+                <Link to="/faq" className="text-muted-foreground hover:text-primary transition-colors">
+                  Help Center
+                </Link>
               </li>
               <li>
-                <span className="text-muted-foreground">Bengaluru, India</span>
+                <span className="text-muted-foreground">Privacy Policy</span>
+              </li>
+              <li>
+                <span className="text-muted-foreground">Terms of Service</span>
               </li>
             </ul>
           </div>
@@ -89,7 +92,7 @@ export function Footer() {
             © 2025 AgroDetect. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground">
-            979-8-3315-5479-8/25/$31.00 © 2025 IEEE
+            Made with ❤️ for farmers worldwide
           </p>
         </div>
       </div>

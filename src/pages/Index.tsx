@@ -1,10 +1,9 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { HeroSection } from "@/components/HeroSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { CropsSection } from "@/components/CropsSection";
-import { PerformanceSection } from "@/components/PerformanceSection";
-import { TeamSection } from "@/components/TeamSection";
+import { SeasonalCropsSection } from "@/components/SeasonalCropsSection";
+import { FAQSection } from "@/components/FAQSection";
 import { Helmet } from "react-helmet-async";
 
 const Index = () => {
@@ -12,17 +11,16 @@ const Index = () => {
     <>
       <Helmet>
         <title>AgroDetect - AI-Powered Plant Disease Detection</title>
-        <meta name="description" content="A hybrid deep learning framework for real-time plant disease detection using YOLOv11, ResNet-50, EfficientNetB0, and Random Forest with 99.04% accuracy." />
+        <meta name="description" content="Upload a photo of your plant leaf and get instant disease diagnosis with treatment recommendations. Keep your crops healthy with AgroDetect." />
       </Helmet>
       
       <div className="min-h-screen bg-background">
         <Navbar />
         <main>
           <HeroSection />
-          <HowItWorksSection />
           <CropsSection />
-          <PerformanceSection />
-          <TeamSection />
+          <SeasonalCropsSection />
+          <FAQSection />
         </main>
         <Footer />
       </div>

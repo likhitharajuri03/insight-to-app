@@ -1,18 +1,19 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Leaf, Upload, Info, FlaskConical } from "lucide-react";
+import { Menu, X, Leaf, Upload, HelpCircle, Mail, LogIn, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "Home", path: "/", icon: Leaf },
-  { name: "Detect", path: "/detect", icon: Upload },
-  { name: "How It Works", path: "/how-it-works", icon: FlaskConical },
-  { name: "About", path: "/about", icon: Info },
+  { name: "Detect Disease", path: "/detect", icon: Upload },
+  { name: "FAQ", path: "/faq", icon: HelpCircle },
+  { name: "Contact", path: "/contact", icon: Mail },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const location = useLocation();
 
   return (
@@ -51,13 +52,33 @@ export function Navbar() {
             })}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link to="/detect">
-              <Button variant="hero" size="lg">
-                Start Detection
-              </Button>
-            </Link>
+          {/* Auth Buttons */}
+          <div className="hidden md:flex items-center gap-2">
+            {isLoggedIn ? (
+              <>
+                <Button variant="ghost" size="sm" className="gap-2">
+                  <User className="w-4 h-4" />
+                  Profile
+                </Button>
+                <Button variant="secondary" size="sm" onClick={() => setIsLoggedIn(false)}>
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  <Button variant="ghost" size="sm" className="gap-2">
+                    <LogIn className="w-4 h-4" />
+                    Login
+                  </Button>
+                </Link>
+                <Link to="/detect">
+                  <Button variant="hero" size="lg">
+                    Start Detection
+                  </Button>
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -95,11 +116,13 @@ export function Navbar() {
                   </Link>
                 );
               })}
-              <Link to="/detect" onClick={() => setIsOpen(false)}>
-                <Button variant="hero" className="w-full mt-2">
-                  Start Detection
-                </Button>
-              </Link>
+              <div className="border-t border-border pt-2 mt-2">
+                <Link to="/login" onClick={() => setIsOpen(false)}>
+                  <Button variant="hero" className="w-full">
+                    Login / Sign Up
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         )}
